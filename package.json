@@ -1,0 +1,24 @@
+{
+  "name": "cloud-storage-mern-backend",
+  "scripts": {
+    "test": "",
+    "prepare": "husky install"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "husky": "^6.0.0"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Alexander Alexeev",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Mandred19/cloud-storage-mern-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mandred19/cloud-storage-mern-backend/issues"
+  },
+  "homepage": "https://github.com/Mandred19/cloud-storage-mern-backend#readme"
+}
