@@ -1,0 +1,4 @@
+{
+  "localServerPort": 9000,
+  "dbURL": "mongodb+srv://mandred:admin@cluster-cloud-storage-m.dhdgv.mongodb.net/cluster-cloud-storage-mern?retryWrites=true&w=majority"
+}
