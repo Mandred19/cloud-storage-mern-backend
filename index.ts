@@ -1,16 +1,17 @@
 import express, { Request, Response } from 'express';
-// import mongoose from 'mongoose';
-
-// import authRouter from './router/auth.routes';
+import {registrationValidationHandler} from './validationHandlers/registrationHandler';
+import {userController} from "./controllers/UserController";
 
 const app = express();
 
 const PORT: number = process.env.PORT ? Number(process.env.PORT) : 8888;
 
-// const api = '/api/';
+const API_AUTH = '/api/auth';
 
 app.use(express.json());
-// app.use(`${api}auth`, authRouter);
+
+app.post(`${API_AUTH}registration`, registrationValidationHandler, userController.registration);
+// app.post(`${API}authorization`, userController.authorization);
 
 app.get('/hello', (_: Request, res: Response) => {
   res.send('Hello World!');

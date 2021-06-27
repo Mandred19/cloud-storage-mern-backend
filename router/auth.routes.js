@@ -9,7 +9,7 @@
 //   '/registration',
 //   [
 //       check('email', 'Incorrect email').isEmail(),
-//       check('password', 'Password must be longer than 3 and shorter than 12').isLength({ min: 3, max: 12 }),
+//       check('passwordFirst', 'Password must be longer than 3 and shorter than 12').isLength({ min: 3, max: 12 }),
 //     ],
 //     async (req, res) => {
 //   try {
