@@ -1,0 +1,33 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declarationDir": "./dist",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "lib": [
+      "es5", "es2015.promise"
+    ],
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "target": "es6",
+    "watch": true,
+    "allowUnreachableCode": true,
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
