@@ -9,7 +9,7 @@ const options = {
   useFindAndModify: false,
 }
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/cloud', options);
+mongoose.connect(`mongodb+srv://${process.env.MONGODB_URI}` || 'mongodb://127.0.0.1:27017/cloud', options);
 
 const db = mongoose.connection;
 
