@@ -16,7 +16,7 @@ const API_AUTH = '/api/auth';
 app.use(express.json());
 
 app.post(`${API_AUTH}/registration`, registrationValidationHandler, userController.registration);
-// app.post(`${API_AUTH}/authorization`, userController.authorization);
+app.post(`${API_AUTH}/authorization`, userController.authorization);
 
 app.listen(PORT, () => {
   console.log('Server listen port:', PORT);

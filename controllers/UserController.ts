@@ -1,6 +1,7 @@
 import {Request, Response} from 'express';
 import {validationResult} from 'express-validator';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 import {UserModel} from '../models/UserModel';
 
@@ -28,6 +29,40 @@ class UserController {
       await user.save();
 
       return res.json({ message: 'User was created' });
+    } catch (e) {
+      console.error(e);
+      res.send({ message: 'Server error'});
+    }
+  }
+
+  async authorization(req: Request, res: Response) {
+    try {
+      const { email, password } = req.body;
+
+      const user = await UserModel.findOne({ email });
+
+      if (!user) {
+        return res.status(404).json({ message: `User with email ${email} not found` });
+      }
+
+      const isPasswordValid = bcrypt.compareSync(password, user.password);
+
+      if (!isPasswordValid) {
+        return res.status(400).json({ message: 'Invalid password' });
+      }
+
+      const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY || 'default-secret-key', { expiresIn: '1h' });
+
+      res.json({
+        token,
+        user: {
+          id: user.id,
+          email: user.email,
+          diskSpace: user.diskSpace,
+          usedSpace: user.usedSpace,
+          avatar: user.avatar,
+        },
+      });
     } catch (e) {
       console.error(e);
       res.send({ message: 'Server error'});
